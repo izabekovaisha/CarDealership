@@ -85,35 +85,41 @@ public class UserInterface {
         }
     }
 
-}
 
-private void displayVehicles() {
-    List<Vehicle> inventory = new ArrayList<>();
-}
-public static void processGetByPriceRequest() {
-}
+    private void displayVehicles(List<Vehicle> inventory) {
+        for (Vehicle vehicle : inventory) {
+            System.out.println(vehicle);
+        }
+    }
 
-public static void processGetByMakeModelRequest() {
-}
+    public void processGetByPriceRequest() {
+    }
 
-public static void processGetByYearRequest() {
-}
+    public void processGetByMakeModelRequest() {
+    }
 
-public static void processGetByColorRequest() {
-}
+    public void processGetByYearRequest() {
+    }
 
-public static void processGetByMileageRequest() {
-}
+    public void processGetByColorRequest() {
+    }
 
-public static void processGetByVehicleTypeRequest() {
-}
+    public void processGetByMileageRequest() {
+    }
 
-public static void processGetAllVehiclesRequest() {
-}
+    public void processGetByVehicleTypeRequest() {
+    }
 
-public static void processAddVehicleRequest() {
-}
+    public void processGetAllVehiclesRequest() {
+        List<Vehicle> inventory  = dealership.getAllVehicles();
+        displayVehicles(inventory);
+    }
 
-public static void processRemoveVehicleRequest() {
-}
+    public static void processAddVehicleRequest() {
+    }
+
+    public static void processRemoveVehicleRequest() {
+    }
+
+
 }
