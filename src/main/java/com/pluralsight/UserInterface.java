@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class UserInterface {
     private Dealership dealership;
 
-    private UserInterface() {
+    public UserInterface() {
         this.initializeDealership();
     }
 
