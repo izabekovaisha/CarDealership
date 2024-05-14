@@ -74,7 +74,16 @@ public class Dealership {
     }
 
     public void removeVehicle(Vehicle vehicle) {
-        inventory.add(vehicle);
+        inventory.remove(vehicle);
+    }
+
+    public Vehicle getVehicleByVin(int vin) {
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getVin() == vin) {
+                return vehicle;
+            }
+        }
+        return null;
     }
 
 }
