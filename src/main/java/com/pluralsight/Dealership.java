@@ -8,7 +8,7 @@ public class Dealership {
     private String address;
     private String phone;
 
-    private final ArrayList<Vehicle> inventory;
+    private ArrayList<Vehicle> inventory;
 
     public Dealership(String name, String address, String phone) {
         this.name = name;
@@ -42,27 +42,57 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehiclesByPrice(double min, double max){
-        return null;
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
+                inventory.add(vehicle);
+            }
+        }
+        return inventory;
     }
 
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
-        return null;
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getMake().equalsIgnoreCase(make)&& vehicle.getModel().equalsIgnoreCase(model)) {
+                inventory.add(vehicle);
+            }
+        }
+        return inventory;
     }
 
     public List<Vehicle> getVehiclesByYear(double min, double max){
-        return null;
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getYear() >= min && vehicle.getYear() <= max) {
+                inventory.add(vehicle);
+            }
+        }
+        return inventory;
     }
 
     public List<Vehicle> getVehiclesByColor(String color){
-        return null;
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getColor().equalsIgnoreCase(color)) {
+                inventory.add(vehicle);
+            }
+        }
+        return inventory;
     }
 
     public List<Vehicle> getVehiclesByMileage(double min, double max){
-        return null;
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
+                inventory.add(vehicle);
+            }
+        }
+        return inventory;
     }
 
     public List<Vehicle> getVehiclesByType(String vehicleType){
-        return null;
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType)) {
+                inventory.add(vehicle);
+            }
+        }
+        return inventory;
     }
 
     public List<Vehicle> getAllVehicles() {

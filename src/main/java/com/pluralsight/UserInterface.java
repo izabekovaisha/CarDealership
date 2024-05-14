@@ -7,7 +7,6 @@ public class UserInterface {
     private Dealership dealership;
 
     public UserInterface() {
-        this.initializeDealership();
     }
 
     /* Private method to create dealership object
@@ -15,9 +14,9 @@ public class UserInterface {
      * 2: Call getDealership method to retrieve the dealership
      * 3. Assign the returned dealership to the UserInterface's this.dealership attribute
      */
-    private void initializeDealership() {
+    private void init() {
         DealershipFileManager dealershipFileManager = new DealershipFileManager();
-        this.dealership = DealershipFileManager.getDealership();
+        this.dealership = dealershipFileManager.getDealership();
     }
 
     /* Method to display menu and process user commands using a while loop
@@ -25,7 +24,7 @@ public class UserInterface {
      * Call the correct process() method that matches the user request using switch a statement
      */
     public void display() {
-        this.initializeDealership();
+        this.init();
         boolean running = true;
         Scanner scanner = new Scanner(System.in);
 
@@ -171,6 +170,7 @@ public class UserInterface {
     }
 
     public void processAddVehicleRequest() {
+        DealershipFileManager dealershipFileManager = new DealershipFileManager();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter VIN: ");
@@ -199,12 +199,13 @@ public class UserInterface {
 
         Vehicle addVehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
         dealership.addVehicle(addVehicle);
-        DealershipFileManager.saveDealership(dealership);
+        dealershipFileManager.saveDealership(dealership);
 
         System.out.println("Vehicle added successfully!");
     }
 
     public void processRemoveVehicleRequest() {
+        DealershipFileManager dealershipFileManager = new DealershipFileManager();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter the VIN of the vehicle you want to remove: ");
@@ -214,7 +215,7 @@ public class UserInterface {
 
         if (removeVehicleRequest != null) {
             dealership.removeVehicle(removeVehicleRequest);
-            DealershipFileManager.saveDealership(dealership);
+            dealershipFileManager.saveDealership(dealership);
             System.out.println("Vehicle removed successfully!");
         } else {
             System.out.println("Vehicle with " + vin + "vin not found");

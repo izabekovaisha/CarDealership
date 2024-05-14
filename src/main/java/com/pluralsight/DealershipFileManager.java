@@ -12,7 +12,7 @@ public class DealershipFileManager {
 * Using Dealership object, BufferedReader, and parsing
 * It also populates the inventory of vehicles
 */
-    public static Dealership getDealership() {
+    public Dealership getDealership() {
         Dealership dealership = null;
         List<Vehicle> inventory = new ArrayList<>();
 
@@ -46,14 +46,18 @@ public class DealershipFileManager {
                 }
                 line2 = line1;
             }
+
         } catch (IOException e) {
             System.out.println("Error loading inventory: " + e.getMessage());
+        }
+        for (Vehicle vehicle : inventory) {
+            dealership.addVehicle(vehicle);
         }
         return dealership;
     }
 
     // Method to overwrite the dealership.csv file with current dealership information and inventory list
-    public static void saveDealership(Dealership dealership) {
+    public void saveDealership(Dealership dealership) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
             writer.write(getDealership().getName() + "|" + getDealership().getAddress() + "|" + getDealership().getPhone());
