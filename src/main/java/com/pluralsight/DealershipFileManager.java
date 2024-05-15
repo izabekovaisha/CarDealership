@@ -59,16 +59,15 @@ public class DealershipFileManager {
     // Method to overwrite the dealership.csv file with current dealership information and inventory list
     public void saveDealership(Dealership dealership) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true));
-            writer.write(getDealership().getName() + "|" + getDealership().getAddress() + "|" + getDealership().getPhone());
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filename, false));
+            writer.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
             writer.newLine();
-            writer.close();
 
-            for (Vehicle vehicle : getDealership().getAllVehicles()) {
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
                 writer.write(vehicle.getVin() + "|" + vehicle.getYear() + "|" + vehicle.getYear() + "|" + vehicle.getMake() + "|" + vehicle.getModel() + "|" + vehicle.getVehicleType() + "|" + vehicle.getColor() + "|" + vehicle.getOdometer() + "|" + vehicle.getPrice());
                 writer.newLine();
-                writer.close();
             }
+            writer.close();
         } catch (IOException e) {
             System.err.println(("Error writing dealership information: " + e.getMessage()));
         }

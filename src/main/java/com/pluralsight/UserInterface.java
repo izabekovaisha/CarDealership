@@ -213,12 +213,14 @@ public class UserInterface {
 
         Vehicle removeVehicleRequest = dealership.getVehicleByVin(vin);
 
+        System.out.println("Remove vehicle: " + removeVehicleRequest);
+
         if (removeVehicleRequest != null) {
             dealership.removeVehicle(removeVehicleRequest);
             dealershipFileManager.saveDealership(dealership);
             System.out.println("Vehicle removed successfully!");
         } else {
-            System.out.println("Vehicle with " + vin + "vin not found");
+            System.out.println("Vehicle with VIN " + vin + " not found");
         }
         }
         }
