@@ -31,7 +31,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-![ezgif-5-046d6d48ac](https://github.com/izabekovaisha/FinancialTracker/assets/166551874/6663b501-2303-4d58-a7e3-aec19f249c7b)
+![Recording2024-05-15154820-ezgif com-video-to-gif-converter](https://github.com/izabekovaisha/CarDealership/assets/166551874/1f4babc5-db5d-4b34-b348-a94d3bb102c3)
 
 ## Future Work
 
