@@ -8,10 +8,10 @@ public class DealershipFileManager {
 
     private static final String filename = "dealership.csv";
 
-/* Method to load and read the dealership.csv file
-* Using Dealership object, BufferedReader, and parsing
-* It also populates the inventory of vehicles
-*/
+    /* Method to load and read the dealership.csv file
+     * Using Dealership object, BufferedReader, and parsing
+     * It also populates the inventory of vehicles
+     */
     public Dealership getDealership() {
         Dealership dealership = null;
         List<Vehicle> inventory = new ArrayList<>();
@@ -56,7 +56,9 @@ public class DealershipFileManager {
         return dealership;
     }
 
-    // Method to overwrite the dealership.csv file with current dealership information and inventory list
+    /* Method to overwrite the dealership.csv file with current dealership information and inventory list
+     * Using BufferedWriter, FileWriter to write to the file
+     */
     public void saveDealership(Dealership dealership) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
@@ -72,7 +74,7 @@ public class DealershipFileManager {
             System.err.println(("Error writing dealership information: " + e.getMessage()));
         }
     }
-    }
+}
 
 
 

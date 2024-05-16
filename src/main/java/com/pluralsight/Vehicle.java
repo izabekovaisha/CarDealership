@@ -11,6 +11,7 @@ public class Vehicle {
     private int odometer;
     private double price;
 
+    // Constructor
     public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
         this.vin = vin;
         this.year = year;
@@ -22,6 +23,7 @@ public class Vehicle {
         this.price = price;
     }
 
+    // Getters and setters for accessing and modifying attributes
     public int getVin() {
         return vin;
     }
@@ -86,6 +88,7 @@ public class Vehicle {
         this.price = price;
     }
 
+    // Override method for custom string representation of the object
     @Override
     public String toString() {
         return "VIN: " + vin + " | " +

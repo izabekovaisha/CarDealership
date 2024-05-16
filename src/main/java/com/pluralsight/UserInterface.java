@@ -21,7 +21,7 @@ public class UserInterface {
 
     /* Method to display menu and process user commands using a while loop
      * Read the user's command using a scanner
-     * Call the correct process() method that matches the user request using switch a statement
+     * Call the correct method that matches the user request using switch a statement
      */
     public void display() {
         this.init();
@@ -83,13 +83,14 @@ public class UserInterface {
         }
     }
 
-
+    // Displays a list of vehicles
     private void displayVehicles(List<Vehicle> inventory) {
         for (Vehicle vehicle : inventory) {
             System.out.println(vehicle);
         }
     }
 
+    // Handles user request for vehicles within a specified price range
     public void processGetByPriceRequest() {
         Scanner scanner = new Scanner(System.in);
 
@@ -103,6 +104,7 @@ public class UserInterface {
         displayVehicles(inventory);
     }
 
+    // Handles user request for vehicles by make and model
     public void processGetByMakeModelRequest() {
         Scanner scanner = new Scanner(System.in);
 
@@ -117,6 +119,7 @@ public class UserInterface {
 
     }
 
+    // Handles user request for vehicles within a specified year range
     public void processGetByYearRequest() {
         Scanner scanner = new Scanner(System.in);
 
@@ -130,6 +133,7 @@ public class UserInterface {
         displayVehicles(inventory);
     }
 
+    // Handles user request for vehicles by color
     public void processGetByColorRequest() {
         Scanner scanner = new Scanner(System.in);
 
@@ -141,6 +145,7 @@ public class UserInterface {
 
     }
 
+    // Handles user request for vehicles within a specified mileage range
     public void processGetByMileageRequest() {
         Scanner scanner = new Scanner(System.in);
 
@@ -154,6 +159,7 @@ public class UserInterface {
         displayVehicles(inventory);
     }
 
+    // Handles user request for vehicles by type
     public void processGetByVehicleTypeRequest() {
         Scanner scanner = new Scanner(System.in);
 
@@ -164,11 +170,13 @@ public class UserInterface {
         displayVehicles(inventory);
     }
 
+    // Handles user request to display all vehicles
     public void processGetAllVehiclesRequest() {
-        List<Vehicle> inventory  = dealership.getAllVehicles();
+        List<Vehicle> inventory = dealership.getAllVehicles();
         displayVehicles(inventory);
     }
 
+    // Handles user request to add a vehicle to the inventory
     public void processAddVehicleRequest() {
         DealershipFileManager dealershipFileManager = new DealershipFileManager();
         Scanner scanner = new Scanner(System.in);
@@ -204,6 +212,7 @@ public class UserInterface {
         System.out.println("Vehicle added successfully!");
     }
 
+    // Handles user request to remove a vehicle from the inventory
     public void processRemoveVehicleRequest() {
         DealershipFileManager dealershipFileManager = new DealershipFileManager();
         Scanner scanner = new Scanner(System.in);
@@ -222,8 +231,8 @@ public class UserInterface {
         } else {
             System.out.println("Vehicle with VIN " + vin + " not found");
         }
-        }
-        }
+    }
+}
 
 
 

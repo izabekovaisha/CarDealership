@@ -1,6 +1,6 @@
 # Car Dealership Application
 
-## Car Dealership is a console-based tool designed for dealership managers and salesmen to manage vehicle inventory effectively. It provides a simple and intuitive interface for performing various tasks related to inventory management.
+## Car Dealership is a console-based tool designed for dealership managers and salesmen to manage vehicle inventory effectively. It provides a simple and user-friendly interface for performing various tasks related to inventory management.
 
 ### Features
 
