@@ -48,6 +48,6 @@ Implementing a loyalty program to reward repeat customers and encourage referral
 
 ## User Stories
 
-[Click](**https://github.com/users/izabekovaisha/projects/4/views/1**) to view the guiding user stories.
+[Click](https://github.com/users/izabekovaisha/projects/4) to view the guiding user stories.
 
 
